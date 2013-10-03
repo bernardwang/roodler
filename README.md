@@ -1,2 +1,2 @@
-cs-125-honors-project
+cs 125 honors project
 =====================
