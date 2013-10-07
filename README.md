@@ -10,6 +10,6 @@ first meeting-
 	set up github
 	reviewed basic idea for project, as well as possible options in the future
 	thought about implementation (ie languages, frameworks)
-	found many outlets in siebel
+	found the location of outlets in siebel
 	facebook crush your coding interview tech talk
 
