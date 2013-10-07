@@ -10,7 +10,12 @@ first meeting-
 	set up github
 	reviewed basic idea for project, as well as possible options in the future
 	thought about implementation (ie languages, frameworks)
+<<<<<<< HEAD
 	options: python, flask, django?
 
 	need to do more research on dynamic websites
+=======
+	found the location of all of the outlets in siebel
+	facebook crush your coding interview tech talk
+>>>>>>> 2fc002d0145dc67cee810ed8dae33f31e1a775a2
 
