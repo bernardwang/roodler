@@ -10,5 +10,7 @@ first meeting-
 	set up github
 	reviewed basic idea for project, as well as possible options in the future
 	thought about implementation (ie languages, frameworks)
-	found many outlets in siebel
+	options: python, flask, django?
+
+	need to do more research on dynamic websites
 
