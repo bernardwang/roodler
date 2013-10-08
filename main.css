@@ -1,4 +1,19 @@
 
+.side{
+	font-family: 'Amatic SC', cursive;
+	font-size: 24px;
+	background: #A3FFA3;
+	text-align: center;
+	margin: 4em;
+	line-height:6em;
+	opacity: 1;
+   transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+}
+.side:hover{
+	opacity: 0.5;
+}
 .head{
 	text-align: center;
 	font-family: 'Amatic SC', cursive;
