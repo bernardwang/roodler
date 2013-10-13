@@ -1,0 +1,52 @@
+body{
+	background-color: #E6FFFF
+}
+
+.navbar{
+	font-family: 'Amatic SC', cursive;
+	background: #A3FFA3;
+	text-align: center;
+}
+
+.home, .about{
+	list-style: none;
+	font-size: 50px;
+
+	margin: 10%;
+	line-height: 200%;
+   	transition: opacity .25s ease-in-out;
+   	-moz-transition: opacity .25s ease-in-out;
+   	-webkit-transition: opacity .25s ease-in-out;
+}
+
+.home:hover, .about:hover{opacity: 0.5;}
+
+.home a{float:left;}
+.about a{float:right;}
+
+.head{
+	list-style: none;
+	text-align: center;
+	font-size: 60px;
+}
+
+a:link{
+	color: #000000;
+	text-decoration:none;
+}
+a:visited{
+ 	color: #000000; 
+ 	text-decoration: none;
+}
+
+canvas{
+	padding-left: 0;
+    padding-right: 0;
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+
+	background-color: magenta;
+	border: 50px solid pink;
+
+}
