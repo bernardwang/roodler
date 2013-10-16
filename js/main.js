@@ -52,9 +52,10 @@ window.addEventListener('load', function () {
 		{
 
 			// Get the mouse position relative to the canvas element.
+			//JOE switched method from layer to client, fixing the annoying starting line
   			if (ev.layerX || ev.layerX == 0) { // Firefox
-    			x = ev.layerX;
-    			y = ev.layerY;
+    			x = ev.clientX;
+    			y = ev.clientY;
   			}
 
   			// The event handler works like a drawing pencil which tracks the mouse 
