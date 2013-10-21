@@ -1,7 +1,4 @@
-/*
-code from
-http://devfiles.myopera.com/articles/649/example1.js
-*/
+
 
 if(window.addEventListener) {
 window.addEventListener('load', function () {
