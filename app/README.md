@@ -12,3 +12,10 @@ first meeting-
 	thought about implementation (ie languages, frameworks)
 	options: python, flask, django?
 	need to do more research on dynamic websites
+
+11/1
+	set up flask
+	did hello world
+	organized project files and directories better
+	figured out offset cause
+	
