@@ -1,6 +1,7 @@
 
 
 if(window.addEventListener) {
+  
   window.addEventListener('load', function () {
 	
 	  var canvas, context;
@@ -73,6 +74,6 @@ if(window.addEventListener) {
 	  } 
 	
 	  init();
-  },false); 
+  },false);
 
 }

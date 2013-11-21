@@ -4,7 +4,8 @@
   <head>
     <!--import css javascript and jquery-->
     <link rel="stylesheet" type="text/css" href="../static/css/home.css"/>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="../static/js/doodle.js"></script>
+    <script type="text/javascript" src="../static/js/home.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
     <!--font-->
@@ -31,10 +32,21 @@
     </nav>
 
     <div id="container">
+
       {% block content %}
       {% endblock %}
+      
+      <canvas id="canvasApp" width="700" height="700">
+        <p>
+            Unfortunately, your browser is currently unsupported by our web 
+            application.  We are sorry for the inconvenience. Please use one of the 
+            supported browsers listed below, or draw the image you want using an 
+            offline tool.
+        </p>
+      <canvas>
     </div>
 
-    <button id="clear" type="button" onclick="alert('Hello world!')">Clear Box</button>
+    <div class="draw"> Draw Doodle </div>
+
   </body>
 </html>
