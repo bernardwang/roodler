@@ -4,7 +4,8 @@ if(window.addEventListener) {
 window.addEventListener('load', function () {
 	
 	var canvas, context;
-
+	var clearButton = document.getElementById["clear"];
+	
 	function init () {
   		// Find the canvas element.
     	canvas = document.getElementById('canvasApp');
@@ -34,7 +35,6 @@ window.addEventListener('load', function () {
 	var x, y;
 	var paint = false;
 	var started = false;
-
 	function ev_mousedown(ev){
  	 	paint = true;
 	}
@@ -47,10 +47,15 @@ window.addEventListener('load', function () {
 	function ev_mousemove (ev) {
 		if (paint)
 		{
-
+			var w = window,
+    d = document,
+    e = d.documentElement,
+    g = d.getElementsByTagName('body')[0],
+    x2 = w.innerWidth || e.clientWidth || g.clientWidth,
+    y2 = w.innerHeight|| e.clientHeight|| g.clientHeight;
 			// Get the mouse position relative to the canvas element.
 			//JOE switched method from layer to client, fixing the annoying starting line
-  			if (ev.layerX || ev.layerX == 0) { // Firefox
+  			if (ev.layerX || ev.layerX == 0) { 
     			x = ev.clientX;
     			y = ev.clientY;
   			}
