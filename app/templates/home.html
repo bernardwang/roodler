@@ -1,7 +1,40 @@
-{% extends "layout.html" %}
-{% block content %}
-  <div class="jumbo">
-    <h2>Welcome to the Flask app<h2>
-    <h3>This is the home page for the Flask app<h3>
-  </div>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!--import css javascript and jquery-->
+    <link rel="stylesheet" type="text/css" href="../static/css/home.css"/>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <!--font-->
+    <link href='http://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+    
+    <title>
+      Roodler
+    </title>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <ul>
+        <li class="home">
+          <a href="index.html">Home</a>
+        </li>
+        <li class="about"> 
+          <a href="about.html">About</a>
+        </li>
+        <li class="head">
+          <h1>Roodler<h1>
+        </li>
+      </ul>
+    </nav>
+
+    <div id="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+    <button id="clear" type="button" onclick="alert('Hello world!')">Clear Box</button>
+  </body>
+</html>
