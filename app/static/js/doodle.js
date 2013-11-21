@@ -1,7 +1,5 @@
+/*if(window.addEventListener) {
 
-
-if(window.addEventListener) {
-  
   window.addEventListener('load', function () {
 	
 	  var canvas, context;
@@ -36,6 +34,7 @@ if(window.addEventListener) {
 	  var x, y;
 	  var paint = false;
 	  var started = false;
+
 	  function ev_mousedown(ev){
  	 	  paint = true;
 	  }
@@ -77,3 +76,4 @@ if(window.addEventListener) {
   },false);
 
 }
+*/

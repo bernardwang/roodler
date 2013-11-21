@@ -60,14 +60,15 @@ canvas{
 }
 
 .draw{
+	font-family: 'Amatic SC', cursive;
+	background: #A3FFA3;
 	width: 200px;
 	height: 50px;
 	margin-right: auto;
 	margin-left: auto;
 	margin-top: 40px;
 	margin-bottom: 40px;
-	background-color: orange;
 	text-align: center;
 	line-height: 50px;
-	font-size: 30px;
+	font-size: 40px;
 }
