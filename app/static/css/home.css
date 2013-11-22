@@ -10,6 +10,15 @@ body{
 	margin-bottom: 50px;
 }
 
+ul{
+	width: 70%;
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	padding: 0px;
+
+}
+
 .home, .about{
 	list-style: none;
 	font-size: 50px;

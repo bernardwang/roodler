@@ -1,4 +1,55 @@
-/*if(window.addEventListener) {
+var canvas, context, paint = false,
+    prevX = 0,
+    currX = 0,
+    prevY = 0,
+    currY = 0,
+    dot_flag = false;
+
+var color = "black",
+    width = 2;
+
+function init() {
+  canvas = document.getElementById('canvas');
+  context = canvas.getContext("2d");
+    w = canvas.width;
+    h = canvas.height;
+
+    canvas.addEventListener("mousedown", function (e) {
+        paint = true;
+    }, false);
+    canvas.addEventListener("mouseup", function (e) {
+        paint = false;
+    }, false);
+    canvas.addEventListener("mousemove", function (e) {
+        getCoords(e)
+    }, false);
+    canvas.addEventListener("mouseout", function (e) {
+        getCoords(e)
+    }, false);
+}
+
+function getCoords(e){
+        prevX = currX;
+        prevY = currY;
+        currX = e.pageX - canvas.offsetLeft;
+        currY = e.pageY - canvas.offsetTop;
+        draw();
+}
+
+function draw() {
+  if(paint){
+    context.beginPath();
+    context.moveTo(prevX, prevY);
+    context.lineTo(currX, currY);
+    context.strokeStyle = color;
+    context.lineWidth = width;
+    context.stroke();
+    context.closePath();
+  }
+}
+
+/*
+if(window.addEventListener) {
 
   window.addEventListener('load', function () {
 	

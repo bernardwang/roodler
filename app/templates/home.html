@@ -16,7 +16,7 @@
     </title>
   </head>
 
-  <body>
+  <body onload="init()">
     <nav class="navbar">
       <ul>
         <li class="home">
@@ -36,7 +36,7 @@
       {% block content %}
       {% endblock %}
       
-      <canvas class="canvas" width="700" height="700">
+      <canvas id="canvas" width="700" height="700">
         <p>
             Unfortunately, your browser is currently unsupported by our web 
             application.  We are sorry for the inconvenience. Please use one of the 
