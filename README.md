@@ -6,7 +6,6 @@ additional features: a way to review pictures that people drew before displaying
 different colors, different brush sizes, etc
 
 10/7
-first meeting- 
 	set up github
 	reviewed basic idea for project, as well as possible options in the future
 	thought about implementation (ie languages, frameworks)
@@ -18,4 +17,10 @@ first meeting-
 	did hello world
 	organized project files and directories better
 	figured out offset cause
+
+11/21
+	put together existing work into flask
+	new implementation of drawing
+	FIXED OFFSET
+	added draw button
 	
