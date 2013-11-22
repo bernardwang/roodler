@@ -34,8 +34,8 @@ function init() {
 function getCoords(e){
   prevX = currX; 
   prevY = currY;
-  currX = e.pageX - canvas.offsetLeft - 50; //gets coords and fixes offset
-  currY = e.pageY - canvas.offsetTop - 50; 
+  currX = e.pageX - canvas.offsetLeft; //gets coords and fixes offset
+  currY = e.pageY - canvas.offsetTop; 
   draw(); 
 }
 

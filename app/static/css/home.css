@@ -11,7 +11,7 @@ body{
 }
 
 ul{
-	width: 70%;
+	max-width: 700px;
 	margin-right: auto;
 	margin-left: auto;
 	display: block;
@@ -21,8 +21,6 @@ ul{
 .home, .about{
 	list-style: none;
 	font-size: 50px;
-
-	margin: 10%;
 	line-height: 115px;
    	transition: opacity .25s ease-in-out;
    	-moz-transition: opacity .25s ease-in-out;
@@ -56,8 +54,8 @@ canvas{
 	margin-left: auto;
 	display: block;
 
-	background-color: magenta;
-	border: 50px solid pink;
+	background-color: white;
+	border: 1px solid black;
 
 	display:none;
 }
