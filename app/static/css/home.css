@@ -55,7 +55,7 @@ canvas{
 	display: block;
 
 	background-color: white;
-	border: 1px solid black;
+
 
 	display:none;
 }
@@ -69,16 +69,20 @@ canvas{
 .drawButton{
 	font-family: 'Amatic SC', cursive;
 	background: #A3FFA3;
-	width: 200px;
-	height: 50px;
-
+	width: 700px;
+	height: 70px;
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
 	margin-top: 50px;
-	margin-bottom: 50px;
+	margin-bottom: 0px;
+
 	text-align: center;
-	line-height: 50px;
+	line-height: 70px;
 	font-size: 40px;
 
+	border: none;
+}
+.drawButton:active{
+	box-shadow: none;
 }

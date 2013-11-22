@@ -9,26 +9,32 @@ var canvas, context, paint = false,
     dot_flag = false;
 
 var color = "black",
-    width = 2;
+    radius = 10;
 
 function init() {
   canvas = document.getElementById('canvas');
   context = canvas.getContext("2d");
-    w = canvas.width;
-    h = canvas.height;
+  w = canvas.width;
+  h = canvas.height;
 
-    canvas.addEventListener("mousedown", function (e) {
-        paint = true;
-    }, false);
-    canvas.addEventListener("mouseup", function (e) {
-        paint = false;
-    }, false);
-    canvas.addEventListener("mousemove", function (e) {
-        getCoords(e)
-    }, false);
-    canvas.addEventListener("mouseout", function (e) {
-        getCoords(e)
-    }, false);
+  context.shadowColor = color;
+  context.shadowBlur = 0;
+  context.lineCap = 'round';
+
+  canvas.addEventListener("mousedown", function (e) {
+    paint = true;
+    getCoords(e)
+  }, false);
+  canvas.addEventListener("mouseup", function (e) {
+    paint = false;
+    getCoords(e)
+  }, false);
+  canvas.addEventListener("mousemove", function (e) {
+    getCoords(e)
+  }, false);
+  canvas.addEventListener("mouseout", function (e) {
+    getCoords(e)
+  }, false);
 }
 
 function getCoords(e){
@@ -45,10 +51,19 @@ function draw() {
     context.moveTo(prevX, prevY);  //draws from prev coord to curr
     context.lineTo(currX, currY);
     context.strokeStyle = color; //sets color
-    context.lineWidth = width; //sets draw width
+    context.lineWidth = radius; //sets stroke radius
     context.stroke(); //draws
     context.closePath(); //stops drawing
+
+    if(prevX==currX&&prevY==currY){
+      context.beginPath();
+      context.arc(currX,currY,radius/2,0,2*Math.PI);
+      context.fillStyle = color;
+      context.fill();
+      context.closePath();
+    }
   }
+
 }
 
 //*************************************************************************************
