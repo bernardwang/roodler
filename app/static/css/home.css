@@ -61,9 +61,12 @@ canvas{
 	display:none;
 }
 
-#canvasImg{
-	display: none;
-}
+ #canvasImg{
+	background-color: white;
+ 	display: none;
+	margin-left: auto;
+	margin-right: auto;
+ }
 
 .doodle{
 	margin-right: auto;
@@ -72,7 +75,7 @@ canvas{
 	display: block;
 }
 
-.drawButton,.submitButton{
+.draw_button,.submit_button{
 	font-family: 'Amatic SC', cursive;
 	background: #A3FFA3;
 	width: 700px;
@@ -89,10 +92,10 @@ canvas{
 
 	border: none;
 }
-.drawButton:active{
+.draw_button:active{
 	box-shadow: none;
 }
 
-.submitButton{
+.submit_button{
 	display: none;
 }

@@ -72,8 +72,8 @@ function draw() {
 function drawButton(){
   $('.doodle').css("display","none");
   $('#canvas').css("display","block");
-  $('.drawButton').css("display","none");
-  $('.submitButton').css("display","block");
+  $('.draw_button').css("display","none");
+  $('.submit_button').css("display","block");
 }
 
 function submitButton(){
