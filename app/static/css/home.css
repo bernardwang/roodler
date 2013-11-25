@@ -61,6 +61,10 @@ canvas{
 	display:none;
 }
 
+#canvasImg{
+	display: none;
+}
+
 .doodle{
 	margin-right: auto;
 	margin-left: auto;

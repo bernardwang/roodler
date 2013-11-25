@@ -11,6 +11,8 @@ var canvas, context, paint = false,
 var color = "black",
     radius = 10;
 
+var dataURL;
+
 function init() {
   canvas = document.getElementById('canvas');
   context = canvas.getContext("2d");
@@ -75,6 +77,7 @@ function drawButton(){
 }
 
 function submitButton(){
-  var dataURL = canvas.toDataURL();
+  dataURL = canvas.toDataURL();
   document.getElementById('canvasImg').src = dataURL;
+
 }
