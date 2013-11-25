@@ -70,4 +70,11 @@ function draw() {
 function drawButton(){
   $('.doodle').css("display","none");
   $('#canvas').css("display","block");
+  $('.drawButton').css("display","none");
+  $('.submitButton').css("display","block");
+}
+
+function submitButton(){
+  var dataURL = canvas.toDataURL();
+  document.getElementById('canvasImg').src = dataURL;
 }

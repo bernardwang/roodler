@@ -68,7 +68,7 @@ canvas{
 	display: block;
 }
 
-.drawButton{
+.drawButton,.submitButton{
 	font-family: 'Amatic SC', cursive;
 	background: #A3FFA3;
 	width: 700px;
@@ -87,4 +87,8 @@ canvas{
 }
 .drawButton:active{
 	box-shadow: none;
+}
+
+.submitButton{
+	display: none;
 }
