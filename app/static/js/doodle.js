@@ -79,5 +79,5 @@ function drawButton(){
 function submitButton(){
   dataURL = canvas.toDataURL();
   document.getElementById('canvasImg').src = dataURL;
-
+  
 }

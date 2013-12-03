@@ -1,10 +1,15 @@
 body{
-	background-color: #E6FFFF
+	background: #a6d4f3;*/
+	/*background: url('../img/paper.jpg');
+	background-size:100%;
+	background-repeat:no-repeat;*/
+	/*background-color: #E6FFFF;*/
 }
 
 .navbar{
-	font-family: 'Amatic SC', cursive;
-	background: #A3FFA3;
+	font-family: 'Rancho', cursive;
+	/*background: #A3FFA3;*/
+	background: white;*/
 	text-align: center;
 	height: 115px;
 	margin-bottom: 50px;
@@ -76,15 +81,16 @@ canvas{
 }
 
 .draw_button,.submit_button{
-	font-family: 'Amatic SC', cursive;
-	background: #A3FFA3;
+	font-family: 'Rancho', cursive;
+	/*background: #A3FFA3;*/
+	background: white;
 	width: 700px;
 	height: 70px;
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
 	margin-top: 50px;
-	margin-bottom: 0px;
+	margin-bottom: 50px;
 
 	text-align: center;
 	line-height: 70px;
