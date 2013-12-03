@@ -76,8 +76,9 @@ function drawButton(){
   $('.submit_button').css("display","block");
 }
 
-function submitButton(){
-  dataURL = canvas.toDataURL();
-  document.getElementById('canvasImg').src = dataURL;
-
+function submitButton() {
+  params = { img : canvas.toDataURL('image/jpeg') };
+  $.post('/save', params, function (data) {
+    alert("Saved!");
+  });
 }
