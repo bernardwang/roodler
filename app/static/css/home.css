@@ -124,7 +124,10 @@ canvas{
 
 	font-family: 'Gudea','Rancho', cursive;
 }
-
+.about_text span{
+	font-size: 13px;
+	vertical-align: sub;
+}
 .about_credit{
 	margin-top: 100px;
 	font-size: 25px;
