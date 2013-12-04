@@ -79,11 +79,18 @@ function drawButton(){
 
 function submitButton() {
   var canvasData = canvas.toDataURL('image/png')
-  var canvasPNG = Canvas2Image.saveAsPNG(canvas, true);   
+  var canvasPNG = Canvas2Image.saveAsPNG(canvas,true);   
+  canvasPNG.id = "canvasImage";
   alert(canvasPNG); 
-  document.body.replaceChild(canvasPNG, canvas);
   
-  /*params = { img : canvasData };
+  canvasPNG.id = "canvasimage";
+
+  canvasPNG.style.border = canvas.style.border;
+  document.body.replaceChild(canvasPNG, canvas);
+
+  
+  /*
+  params = { img : canvasData };
   $.post('/save', params, function (data) {
     alert("Saved!");
   });*/
