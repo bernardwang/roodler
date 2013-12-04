@@ -1,6 +1,6 @@
 body{
-	background: #a6d4f3;*/
-	/*background: url('../img/paper.jpg');
+	/*background: #a6d4f3;*/
+	background: url('../img/paper.jpg');
 	background-size:100%;
 	background-repeat:no-repeat;*/
 	/*background-color: #E6FFFF;*/
@@ -97,9 +97,12 @@ canvas{
 	font-size: 40px;
 
 	border: none;
+
+	transition-duration: .25s;
 }
-.draw_button:active{
-	box-shadow: none;
+.draw_button:hover, .submit_button:hover{
+	background: #a6d4f3;
+
 }
 
 .submit_button{
