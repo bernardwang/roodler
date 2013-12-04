@@ -7,7 +7,7 @@ body{
 }
 
 .navbar{
-	font-family: 'Rancho', cursive;
+	font-family: 'Rancho', 'Amatic SC', cursive;
 	/*background: #A3FFA3;*/
 	background: white;*/
 	text-align: center;
@@ -81,7 +81,7 @@ canvas{
 }
 
 .draw_button,.submit_button{
-	font-family: 'Rancho', cursive;
+	font-family: 'Rancho', 'Amatic SC', cursive;
 	/*background: #A3FFA3;*/
 	background: white;
 	width: 700px;
@@ -106,4 +106,35 @@ canvas{
 
 .submit_button{
 	display: none;
+}
+
+.about_section{
+	margin-left: auto;
+	margin-right:auto;
+	display: block;
+	max-width: 700px;
+	font-family: 'Rancho', 'Amatic SC', cursive;
+}
+.about_header{
+	font-size: 79px;
+}
+
+.about_text{
+	font-size: 35px;
+
+	font-family: 'Gudea','Rancho', cursive;
+}
+
+.about_credit{
+	margin-top: 100px;
+	font-size: 25px;
+}
+.about_credit a{
+	font-size: 35px;
+	transition: opacity .25s ease-in-out;
+   	-moz-transition: opacity .25s ease-in-out;
+   	-webkit-transition: opacity .25s ease-in-out;
+}
+.about_credit a:hover{
+	opacity: 0.5;
 }
