@@ -152,13 +152,22 @@ canvas{
 	width: 30px;
 	height: 30px;
 	margin-bottom: 30px;
-
 	display: block;
-	border: none;
+	border: 1px solid #ccc;
 }
 .color_select span li{
 	margin-right: 0px;
 }
+.black{background-color: black;}
+.white{background-color: white;}
+.red{background-color: red;}
+.orange{background-color: orange;}
+.yellow{background-color: yellow;}
+.green{background-color: green;}
+.blue{background-color: blue;}
+.cyan{background-color: #00FFFF;}
+.purple{background-color: #9B30FF;}
+.magenta{background-color: #FF00FF;}
 
 /***************************************************************************/
 .about_section{
