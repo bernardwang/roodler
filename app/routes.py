@@ -11,13 +11,12 @@ def home():
 @app.route('/save', methods=['POST'])
 def save():
   dataURL = request.form['img']
-  dataUrlPattern = re.compile('data:image/(png|jpeg);base64,(.*)$')
-  imgb64 = dataUrlPattern.match(dataURL).group(2)
-  if imgb64 is not None and len(imgb64) > 0:
-  	f = open('image.jpg', 'w')
-  	f.write(imgb64) #Results in corrupt file :(
-  	f.close()
-  return "hippie"
+
+  fh = open("doodle.png", "wb")
+  fh.write(dataURL.decode('base64'))
+  fh.close()
+
+  return "stuff" #dont know what this is but ok
 
 @app.route('/about')
 def about():
