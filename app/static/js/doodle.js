@@ -24,10 +24,12 @@ function init() {
   context.fillStyle = "white"
   context.fillRect(0,0,w,h);
 
+  //other line settings
   context.shadowColor = color;
   context.shadowBlur = 0;
   context.lineCap = 'round';
 
+  //mouse listeners
   canvas.addEventListener("mousedown", function (e) {
     paint = true;
     getCoords(e)
@@ -45,6 +47,7 @@ function init() {
 }
 
 function getCoords(e){
+  //gets coordinates for drawing, calls drawing function
   prevX = currX; 
   prevY = currY;
   currX = e.pageX - canvas.offsetLeft; //gets coords and fixes offset
@@ -54,16 +57,19 @@ function getCoords(e){
 
 function draw() {
   if(paint){
+    //drawing settings
     context.fillStyle = color;
     context.strokeStyle = color; //sets color
     context.lineWidth = radius; //sets stroke radius
 
+    //drawing
     context.beginPath(); //starts drawing
     context.moveTo(prevX, prevY);  //draws from prev coord to curr
     context.lineTo(currX, currY);
     context.stroke(); //draws
     context.closePath(); //stops drawing
 
+    //if short click
     if(prevX==currX&&prevY==currY){
       context.beginPath();
       context.arc(currX,currY,radius/2,0,2*Math.PI);
@@ -75,18 +81,23 @@ function draw() {
 }
 
 //*************************************************************************************
+
 function drawButton(){
+  //switches display to canvas
   $('.canvasImg').css("display","none");
   $('#canvas').css("display","block");
+  //switches buttons
   $('.draw_button').css("display","none");
   $('.submit_button').css("display","block");
   $('.download_button').css("display","block");
 }
 
 function submitButton() {
+  //gets dataurl and cuts out part of string
   var dataURL = canvas.toDataURL('image/png');
   dataURL = dataURL.replace("data:image/png;base64,", ""); 
 
+  //calls python
   params = {img : dataURL };
   $.post('/submitImg', params, function (data) {
     alert("Doodle Submited!");

@@ -15,7 +15,6 @@ def about():
 @app.route('/submitImg', methods=['POST'])
 def submitImg():
   dataURL = request.form['img']
-
   f = open("static/img/doodle.png", "w")
   f.write(dataURL.decode('base64'))
   f.close()

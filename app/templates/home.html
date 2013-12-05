@@ -22,7 +22,7 @@
   </head>
 
   <body onload="init()">
-    <nav class="navbar">
+    <div class="navbar">
       <ul>
         <li class="home">
           <a href="/">Home</a>
@@ -31,10 +31,10 @@
           <a href="/about">About</a>
         </li>
         <li class="head">
-          <h1>Roodler<h1>
+          Roodler
         </li>
       </ul>
-    </nav>
+    </div>
 
     <div class="top_buttons">
       <button class="draw_button" type="button" onclick="drawButton()"> Draw a Doodle! </button>
@@ -42,25 +42,20 @@
       <button class="download_button" type="button" onclick="downloadButton()"> Download </button>
     </div>
 
-    <div id="container">
-
+    <div class="container">
       <!--{% block content %}
       {% endblock %}-->
-      
-      <canvas id="canvas" width="900" height="900">
-        <p>
+      <div class="canvas_wrapper">
+        <canvas id="canvas" width="880" height="880">
+          <p>
             Unfortunately, your browser is currently unsupported by our web 
             application.  We are sorry for the inconvenience. Please use one of the 
             supported browsers listed below, or draw the image you want using an 
             offline tool.
-        </p>
-      </canvas>
-      
-      <img class="canvasImg" src="../static/img/doodle.png" width="900px" height="900px"/>
-
-      
-
+          </p>
+        </canvas>
+        <img class="canvasImg" src="../static/img/doodle.png" width="880px" height="880px"/>
+      </div>  
     </div>
-
   </body>
 </html>
