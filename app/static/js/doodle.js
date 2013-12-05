@@ -2,7 +2,7 @@
 //*************************************************************************************
 
 //drawing variables
-var canvas, context, paint = false,
+var canvas, context, paint = false, cursor = false,
     prevX = 0,
     currX = 0,
     prevY = 0,
@@ -21,7 +21,7 @@ function init() {
   h = canvas.height;
 
   //fills canvas with background color
-  context.fillStyle = "white"
+  context.fillStyle = "white";
   context.fillRect(0,0,w,h);
 
   //other line settings
@@ -32,17 +32,21 @@ function init() {
   //mouse listeners
   canvas.addEventListener("mousedown", function (e) {
     paint = true;
-    getCoords(e)
+    getCoords(e);
   }, false);
   canvas.addEventListener("mouseup", function (e) {
     paint = false;
     getCoords(e)
   }, false);
   canvas.addEventListener("mousemove", function (e) {
-    getCoords(e)
+    getCoords(e);
+    $('.cursor').css("display","block");
+    moveCursor();
   }, false);
   canvas.addEventListener("mouseout", function (e) {
-    getCoords(e)
+    paint = false;
+    getCoords(e);
+    $('.cursor').css("display","none");
   }, false);
 }
 
@@ -54,6 +58,13 @@ function getCoords(e){
   currY = e.pageY - canvas.offsetTop; 
   draw(); 
 }
+
+function moveCursor(){
+  var x = currX-5;
+  var y = currY+5;
+  $('.cursor').css({left:x, top:y});
+}
+
 
 function draw() {
   if(paint){
@@ -86,6 +97,7 @@ function drawButton(){
   //switches display to canvas
   $('.canvasImg').css("display","none");
   $('#canvas').css("display","block");
+  $('.cursor').css("display","block");
   //switches buttons
   $('.draw_button').css("display","none");
   $('.submit_button').css("display","block");
@@ -114,31 +126,44 @@ function downloadButton(){
 
 function black(){
   color="black";
+  updateCursor();
 }
 function white(){
   color="white";
+  updateCursor();
 }
 function red(){
   color="red";
+  updateCursor();
 }
 function orange(){
   color="orange";
+  updateCursor();
 }
 function yellow(){
   color="yellow";
+  updateCursor();
 }
 function green(){
   color="green";
+  updateCursor();
 }
 function blue(){
   color="blue";
+  updateCursor();
 }
 function cyan(){
   color="cyan";
+  updateCursor();
 }
 function purple(){
   color="purple";
+  updateCursor();
 }
 function magenta(){
   color="magenta";
+}
+
+function updateCursor(){
+  $('.cursor').css("border-color",color);
 }
