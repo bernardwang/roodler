@@ -27,6 +27,7 @@ ul{
 	margin-left: auto;
 	display: block;
 	padding: 0px;
+	list-style: none;
 }
 .head{
 	list-style: none;
@@ -36,7 +37,6 @@ ul{
 	line-height: 150px;
 }
 .home, .about{
-	list-style: none;
 	font-size: 50px;
 	line-height: 150px;
    	transition: opacity .25s ease-in-out;
@@ -106,7 +106,7 @@ canvas{
 	margin-left: auto;
 	display: block;
 }
-.top_buttons button{
+.top_buttons>button{
 	font-family: 'Rancho', 'Amatic SC', cursive;
 	/*background: #A3FFA3;*/
 	background: white;
@@ -144,6 +144,23 @@ canvas{
 .draw_button:hover, .submit_button:hover, .download_button:hover{
 	background: #a6d4f3;
 }
+.color_select li{
+	float:left;
+	margin-right: 66.5px;
+}
+.color_select li button{
+	width: 30px;
+	height: 30px;
+	margin-bottom: 30px;
+
+	display: block;
+	border: none;
+}
+.color_select span li{
+	margin-right: 0px;
+}
+
+/***************************************************************************/
 .about_section{
 	margin-left: auto;
 	margin-right:auto;
