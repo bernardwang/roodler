@@ -8,19 +8,29 @@ app = Flask(__name__)
 def home():
   return render_template('doodle.html')
 
-@app.route('/save', methods=['POST'])
-def save():
-  dataURL = request.form['img']
-
-  fh = open("doodle.png", "wb")
-  fh.write(dataURL.decode('base64'))
-  fh.close()
-
-  return "stuff" #dont know what this is but ok
-
 @app.route('/about')
 def about():
   return render_template('about.html')
+
+@app.route('/saveImg', methods=['POST'])
+def saveImg():
+  dataURL = request.form['img']
+
+  #f = open("doodle.txt", "r+")
+  #f.write(dataURL)
+  #f.close()
+  f = open("static/img/doodle.png", "w")
+  f.write(dataURL.decode('base64'))
+  f.close()
+  return "stuff" #dont know what this is but ok
+
+#@app.route('/saveTxt', methods=['POST'])
+#def saveTxt():
+#	dataURL = request.form['img']
+#	f = open("test.txt", "r+")
+# 	f.write(dataURL)
+#  	f.close()
+#	return "stuff"
 
 if __name__ == '__main__':
   app.run(debug=True)

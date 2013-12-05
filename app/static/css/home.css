@@ -58,17 +58,15 @@ canvas{
 	margin-right: auto;
 	margin-left: auto;
 	margin-bottom: 60px;
-	display: block;
 
 	background-color: white;
-
 
 	display:none;
 }
 
  #canvasImg{
 	background-color: white;
- 	display: none;
+ 	display: block;
 	margin-left: auto;
 	margin-right: auto;
  }
@@ -79,19 +77,22 @@ canvas{
 	margin-bottom: 60px;
 	display: block;
 }
-
-.draw_button,.submit_button{
+.top_buttons{
+	max-width: 700px;
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+}
+.top_buttons button{
 	font-family: 'Rancho', 'Amatic SC', cursive;
 	/*background: #A3FFA3;*/
 	background: white;
-	width: 700px;
 	height: 70px;
-	display: block;
 	margin-right: auto;
 	margin-left: auto;
-	margin-top: 50px;
-	margin-bottom: 50px;
-
+	margin-top: 0px;
+	margin-bottom: 30px;
+	padding: 0px;
 	text-align: center;
 	line-height: 70px;
 	font-size: 40px;
@@ -100,12 +101,27 @@ canvas{
 
 	transition-duration: .25s;
 }
-.draw_button:hover, .submit_button:hover{
-	background: #a6d4f3;
+.draw_button{
+	display: block;
+	width: 700px;
+	float:left;
+}
+.submit_button, .download_button{
+	display: none;
+	width: 325px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	clear: none;
 }
 
 .submit_button{
-	display: none;
+	float: left;
+}
+.download_button{
+	float:right;
+}
+.draw_button:hover, .submit_button:hover, .download_button:hover{
+	background: #a6d4f3;
 }
 
 .about_section{

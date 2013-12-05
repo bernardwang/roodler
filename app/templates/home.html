@@ -37,13 +37,16 @@
       </ul>
     </nav>
 
-    <button class="draw_button" type="button" onclick="drawButton()"> Draw a Doodle! </button>
-    <button class="submit_button" type="button" onclick="submitButton()"> Submit Doodle </button>
+    <div class="top_buttons">
+      <button class="draw_button" type="button" onclick="drawButton()"> Draw a Doodle! </button>
+      <button class="submit_button" type="button" onclick="submitButton()"> Submit </button>
+      <button class="download_button" type="button" onclick="downloadButton()"> Download </button>
+    </div>
 
     <div id="container">
 
-      {% block content %}
-      {% endblock %}
+      <!--{% block content %}
+      {% endblock %}-->
       
       <canvas id="canvas" width="700" height="700">
         <p>
@@ -54,9 +57,8 @@
         </p>
       </canvas>
       
-      <div>
-        <img id="canvasImg"> </img>
-      </div>
+      <img id="canvasImg" src="../img/doodle.png"> 
+      
 
     </div>
 

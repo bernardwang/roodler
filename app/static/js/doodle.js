@@ -74,14 +74,23 @@ function drawButton(){
   $('#canvas').css("display","block");
   $('.draw_button').css("display","none");
   $('.submit_button').css("display","block");
+  $('.download_button').css("display","block");
 }
 
 function submitButton() {
   canvasData = canvas.toDataURL('image/png');
   canvasData = canvasData.replace("data:image/png;base64,", ""); 
-  
+
   params = {img : canvasData };
-  $.post('/save', params, function (data) {
-    alert("Saved!");
+  $.post('/saveImg', params, function (data) {
+    alert("Doodle Submited!");
   });
+
+  $.post('/saveTxt', params, function (data) {
+    alert("Doodle Submited!");
+  });
+}
+
+function downloadButton(){
+  Canvas2Image.saveAsPNG(canvas);
 }
