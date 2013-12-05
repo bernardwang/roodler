@@ -98,8 +98,8 @@ function submitButton() {
   }
   baseimage.src    = 'what.jpg';*/
 
-  convasData = canvas.toDataURL('image/png');
-  convasData = canvasData.replace("data:image/png;base64,", ""); 
+  canvasData = canvas.toDataURL('image/png');
+  //canvasData = canvasData.replace("data:image/png;base64,", ""); 
   params = { img : canvasData };
   $.post('/save', params, function (data) {
     alert("Saved!");

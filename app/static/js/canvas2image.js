@@ -1,3 +1,4 @@
+
 /*
  * Canvas2Image v0.1
  * Copyright (c) 2008 Jacob Seidelin, jseidelin@nihilogic.dk
@@ -190,6 +191,21 @@ var Canvas2Image = (function() {
 			}
 			return true;
 		},
+
+		//edited 
+		/*
+		saveAsPNG : function(oCanvas, bReturnImg) {
+			if (!bHasDataURL) {
+				return false;
+			}
+			var oScaledCanvas = scaleCanvas(oCanvas, iWidth, iHeight);
+			var strData = oScaledCanvas.toDataURL("image/png");
+			if (bReturnImg==1) {
+				strData.replace("image/png", strDownloadMime);
+			}
+			return strData;
+		},*/
+
 
 		saveAsJPEG : function(oCanvas, bReturnImg, iWidth, iHeight) {
 			if (!bHasDataURL) {
