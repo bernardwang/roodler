@@ -78,7 +78,8 @@ function drawButton(){
 
 
 function submitButton() {
-  var canvasData = canvas.toDataURL('image/png')
+  /*var canvasData = canvas.toDataURL('image/png');
+  document.getElementById('canvasImg').src = canvasData;
   var canvasPNG = Canvas2Image.saveAsPNG(canvas,true);   
   canvasPNG.id = "canvasImage";
   alert(canvasPNG); 
@@ -86,12 +87,21 @@ function submitButton() {
   canvasPNG.id = "canvasimage";
 
   canvasPNG.style.border = canvas.style.border;
-  document.body.replaceChild(canvasPNG, canvas);
+  document.body.replaceChild(canvasPNG, canvas);*/
 
-  
   /*
+  baseimage        = new Image();
+  baseimage.onload = function() {
+    context.drawImage(baseimage,1,1);    
+    var canvasData = canvas.toDataURL("image/png");
+    document.getElementById('canvasImg').src = canvasData;
+  }
+  baseimage.src    = 'what.jpg';*/
+
+  convasData = canvas.toDataURL('image/png');
+  convasData = canvasData.replace("data:image/png;base64,", ""); 
   params = { img : canvasData };
   $.post('/save', params, function (data) {
     alert("Saved!");
-  });*/
+  });
 }
