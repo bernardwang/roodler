@@ -1,27 +1,28 @@
 
 //*************************************************************************************
 
+//drawing variables
 var canvas, context, paint = false,
     prevX = 0,
     currX = 0,
     prevY = 0,
-    currY = 0,
-    dot_flag = false;
+    currY = 0;
 
+//drawing settings
 var color = "black",
     radius = 10;
 
-var dataURL;
-
+//inital call
 function init() {
+  //initialize canvas variables
   canvas = document.getElementById('canvas');
   context = canvas.getContext("2d");
   w = canvas.width;
   h = canvas.height;
 
   //fills canvas with background color
-  //canvas.fillStyle = "white"
-  //canvas.fillRect(0,0 , w, h);
+  context.fillStyle = "white"
+  context.fillRect(0,0,w,h);
 
   context.shadowColor = color;
   context.shadowBlur = 0;
@@ -75,7 +76,7 @@ function draw() {
 
 //*************************************************************************************
 function drawButton(){
-  $('.canvasImg').css("display","none");
+  $('#canvasImg').css("display","none");
   $('#canvas').css("display","block");
   $('.draw_button').css("display","none");
   $('.submit_button').css("display","block");
@@ -83,10 +84,10 @@ function drawButton(){
 }
 
 function submitButton() {
-  canvasData = canvas.toDataURL('image/png');
-  canvasData = canvasData.replace("data:image/png;base64,", ""); 
+  var dataURL = canvas.toDataURL('image/png');
+  dataURL = dataURL.replace("data:image/png;base64,", ""); 
 
-  params = {img : canvasData };
+  params = {img : dataURL };
   $.post('/submitImg', params, function (data) {
     alert("Doodle Submited!");
   });

@@ -60,12 +60,10 @@ canvas{
 	margin-bottom: 60px;
 
 	background-color: white;
-
 	display:none;
 }
 
- .canvasImg{
-	background-color: white;
+ #canvasImg{
  	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -104,12 +102,12 @@ canvas{
 }
 .draw_button{
 	display: block;
-	width: 700px;
+	width: 100%;
 	float:left;
 }
 .submit_button, .download_button{
 	display: none;
-	width: 325px;
+	width: 47.5%;
 	margin-top: 30px;
 	margin-bottom: 30px;
 	clear: none;
