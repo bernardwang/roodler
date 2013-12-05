@@ -36,15 +36,16 @@
       </ul>
     </div>
 
-    <div class="top_buttons">
-      <button class="draw_button" type="button" onclick="drawButton()"> Draw a Doodle! </button>
-      <button class="submit_button" type="button" onclick="submitButton()"> Submit </button>
-      <button class="download_button" type="button" onclick="downloadButton()"> Download </button>
-    </div>
-
     <div class="container">
       <!--{% block content %}
       {% endblock %}-->
+
+      <div class="top_buttons">
+        <button class="draw_button" type="button" onclick="drawButton()"> Draw a Doodle! </button>
+        <button class="submit_button" type="button" onclick="submitButton()"> Submit </button>
+        <button class="download_button" type="button" onclick="downloadButton()"> Download </button>
+      </div>
+
       <div class="canvas_wrapper">
         <canvas id="canvas" width="880" height="880">
           <p>
@@ -57,5 +58,6 @@
         <img class="canvasImg" src="../static/img/doodle.png" width="880px" height="880px"/>
       </div>  
     </div>
+
   </body>
 </html>

@@ -1,33 +1,44 @@
 body{
-	/*background: #a6d4f3;*/
+	/*background: #a6d4f3;
 	background: url('../img/paper.jpg');
 	background-size:100%;
 	background-repeat:no-repeat;*/
 	/*background-color: #E6FFFF;*/
+	background: white;
+	margin: 0;
 }
 .navbar{
 	font-family: 'Rancho', 'Amatic SC', cursive;
 	/*background: #A3FFA3;*/
-	background: white;*/
+	background-color: #F7F7F7;*/
 	text-align: center;
-	height: 130px;
-	margin-top: 50px;
+	height: 150px;
 	margin-bottom: 50px;
-	border-top: 10px solid black;
-	border-bottom: 10px solid black;
+	/*border-top: 10px solid black;
+	border-bottom: 10px solid black;*/
+	border-bottom: 1px solid #ccc;
+	background-color: #F7F7F7;
 	position: relative;
 }
 ul{
 	max-width: 900px;
+	margin: 0;
 	margin-right: auto;
 	margin-left: auto;
 	display: block;
 	padding: 0px;
 }
+.head{
+	list-style: none;
+	text-align: center;
+	font-size: 120px;
+	font-weight: 600;
+	line-height: 150px;
+}
 .home, .about{
 	list-style: none;
 	font-size: 50px;
-	line-height: 110px;
+	line-height: 150px;
    	transition: opacity .25s ease-in-out;
    	-moz-transition: opacity .25s ease-in-out;
    	-webkit-transition: opacity .25s ease-in-out;
@@ -41,13 +52,6 @@ ul{
 .about a{
 	float:right;
 }
-.head{
-	list-style: none;
-	text-align: center;
-	font-size: 100px;
-	font-weight: 600;
-	line-height: 110px;
-}
 a:link{
 	color: #000000;
 	text-decoration:none;
@@ -56,18 +60,23 @@ a:visited{
  	color: #000000; 
  	text-decoration: none;
 }
+hr{
+	max-width: 900px;
+}
 .container{
 	max-width: 900px;
 	margin-right: auto;
 	margin-left: auto;
 	display: block;
+	background-color: white;
 }
 .canvas_wrapper{
 	width: 880px;
 	height: 880px;
-	border: 10px solid black;
+	border: 10px dotted black;
 	margin-right: auto;
 	margin-left: auto;
+	margin-bottom: 60px;
 	float: left;
 }
 canvas{
@@ -75,7 +84,6 @@ canvas{
     padding-right: 0;
 	margin-right: auto;
 	margin-left: auto;
-	margin-bottom: 60px;
 	clear: both;
 
 	background-color: white;
@@ -85,7 +93,6 @@ canvas{
  	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 60px;
 }
 .doodle{
 	margin-right: auto;
@@ -140,6 +147,7 @@ canvas{
 .about_section{
 	margin-left: auto;
 	margin-right:auto;
+	margin-bottom: 60px;
 	display: block;
 	max-width: 900px;
 	font-family: 'Rancho', 'Amatic SC', cursive;
@@ -160,6 +168,7 @@ canvas{
 .about_credit{
 	margin-top: 100px;
 	font-size: 20px;
+	margin-bottom: 0;
 }
 .about_credit a{
 	font-size: 30px;
