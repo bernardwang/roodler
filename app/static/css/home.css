@@ -144,6 +144,9 @@ canvas{
 .draw_button:hover, .submit_button:hover, .download_button:hover{
 	background: #a6d4f3;
 }
+.color_select{
+	display: none;
+}
 .color_select li{
 	float:left;
 	margin-right: 66.5px;
@@ -166,7 +169,7 @@ canvas{
 .green{background-color: green;}
 .blue{background-color: blue;}
 .cyan{background-color: #00FFFF;}
-.purple{background-color: #9B30FF;}
+.purple{background-color: #800080;}
 .magenta{background-color: #FF00FF;}
 
 /***************************************************************************/

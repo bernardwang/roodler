@@ -90,6 +90,7 @@ function drawButton(){
   $('.draw_button').css("display","none");
   $('.submit_button').css("display","block");
   $('.download_button').css("display","block");
+  $('.color_select').css("display","block");
 }
 
 function submitButton() {
@@ -107,4 +108,37 @@ function submitButton() {
 
 function downloadButton(){
   Canvas2Image.saveAsPNG(canvas);
+}
+
+//*************************************************************************************
+
+function black(){
+  color="black";
+}
+function white(){
+  color="white";
+}
+function red(){
+  color="red";
+}
+function orange(){
+  color="orange";
+}
+function yellow(){
+  color="yellow";
+}
+function green(){
+  color="green";
+}
+function blue(){
+  color="blue";
+}
+function cyan(){
+  color="cyan";
+}
+function purple(){
+  color="purple";
+}
+function magenta(){
+  color="magenta";
 }
