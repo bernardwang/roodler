@@ -60,8 +60,8 @@ function getCoords(e){
 }
 
 function moveCursor(){
-  var x = currX-5;
-  var y = currY+5;
+  var x = currX-5; //cursor offset
+  var y = currY-5;
   $('.cursor').css({left:x, top:y});
 }
 
@@ -97,7 +97,6 @@ function drawButton(){
   //switches display to canvas
   $('.canvasImg').css("display","none");
   $('#canvas').css("display","block");
-  $('.cursor').css("display","block");
   //switches buttons
   $('.draw_button').css("display","none");
   $('.submit_button').css("display","block");
@@ -162,8 +161,9 @@ function purple(){
 }
 function magenta(){
   color="magenta";
+  updateCursor();
 }
 
 function updateCursor(){
-  $('.cursor').css("border-color",color);
+  $('.cursor').css("background-color",color);
 }
