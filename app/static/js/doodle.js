@@ -76,7 +76,7 @@ function draw() {
 
 //*************************************************************************************
 function drawButton(){
-  $('#canvasImg').css("display","none");
+  $('.canvasImg').css("display","none");
   $('#canvas').css("display","block");
   $('.draw_button').css("display","none");
   $('.submit_button').css("display","block");
