@@ -19,6 +19,10 @@ function init() {
   w = canvas.width;
   h = canvas.height;
 
+  //fills canvas with background color
+  //canvas.fillStyle = "white"
+  //canvas.fillRect(0,0 , w, h);
+
   context.shadowColor = color;
   context.shadowBlur = 0;
   context.lineCap = 'round';
@@ -49,18 +53,19 @@ function getCoords(e){
 
 function draw() {
   if(paint){
+    context.fillStyle = color;
+    context.strokeStyle = color; //sets color
+    context.lineWidth = radius; //sets stroke radius
+
     context.beginPath(); //starts drawing
     context.moveTo(prevX, prevY);  //draws from prev coord to curr
     context.lineTo(currX, currY);
-    context.strokeStyle = color; //sets color
-    context.lineWidth = radius; //sets stroke radius
     context.stroke(); //draws
     context.closePath(); //stops drawing
 
     if(prevX==currX&&prevY==currY){
       context.beginPath();
       context.arc(currX,currY,radius/2,0,2*Math.PI);
-      context.fillStyle = color;
       context.fill();
       context.closePath();
     }
@@ -70,7 +75,7 @@ function draw() {
 
 //*************************************************************************************
 function drawButton(){
-  $('.doodle').css("display","none");
+  $('.canvasImg').css("display","none");
   $('#canvas').css("display","block");
   $('.draw_button').css("display","none");
   $('.submit_button').css("display","block");
@@ -82,13 +87,10 @@ function submitButton() {
   canvasData = canvasData.replace("data:image/png;base64,", ""); 
 
   params = {img : canvasData };
-  $.post('/saveImg', params, function (data) {
+  $.post('/submitImg', params, function (data) {
     alert("Doodle Submited!");
   });
 
-  $.post('/saveTxt', params, function (data) {
-    alert("Doodle Submited!");
-  });
 }
 
 function downloadButton(){

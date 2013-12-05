@@ -12,8 +12,8 @@ def home():
 def about():
   return render_template('about.html')
 
-@app.route('/saveImg', methods=['POST'])
-def saveImg():
+@app.route('/submitImg', methods=['POST'])
+def submitImg():
   dataURL = request.form['img']
 
   #f = open("doodle.txt", "r+")
@@ -23,14 +23,6 @@ def saveImg():
   f.write(dataURL.decode('base64'))
   f.close()
   return "stuff" #dont know what this is but ok
-
-#@app.route('/saveTxt', methods=['POST'])
-#def saveTxt():
-#	dataURL = request.form['img']
-#	f = open("test.txt", "r+")
-# 	f.write(dataURL)
-#  	f.close()
-#	return "stuff"
 
 if __name__ == '__main__':
   app.run(debug=True)
