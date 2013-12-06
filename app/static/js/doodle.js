@@ -60,8 +60,8 @@ function getCoords(e){
 }
 
 function moveCursor(){
-  var x = currX-5; //cursor offset
-  var y = currY-5;
+  var x = currX-(radius/2); //cursor offset
+  var y = currY+(radius/2);
   $('.cursor').css({left:x, top:y});
 }
 
@@ -123,14 +123,14 @@ function downloadButton(){
 
 function plusButton(){
   if(radius+1<1000){
-    radius++;
-    $('.radius_display').text(radius.toString());
+    radius+=2;
+    updateCursor();
   }
 } 
 function minusButton(){
   if(radius-1>0){
-    radius--;
-    $('.radius_display').text(radius.toString());
+    radius-=2;
+    updateCursor();
   }
 }
 
@@ -177,4 +177,12 @@ function magenta(){
 
 function updateCursor(){
   $('.cursor').css("color",color);
+  $('.cursor').css("border",(radius/2)+"px solid");
+  $('.cursor').css("margin-top",-radius+"px");
+  if(radius==0){
+    $('.radius_display').text("1");
+  }
+  else{
+    $('.radius_display').text(radius.toString());
+  }
 }
