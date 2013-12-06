@@ -82,10 +82,11 @@ hr{
 }
 .cursor{
 	display: none;
-	width: 10px;
-	height: 10px;
+	width: 0px;
+	height: 0px;
+	border: 5px solid;
 	border-radius: 999px;
-	background-color: black;
+	color: black;
 	position: relative;
 	pointer-events:none;
 	margin: 0 0 -10px 0;
@@ -121,25 +122,24 @@ canvas{
 	font-family: 'Rancho', 'Amatic SC', cursive;
 	/*background: #A3FFA3;*/
 	background: white;
-	height: 90px;
 	margin-right: auto;
 	margin-left: auto;
 	margin-top: 0px;
 	margin-bottom: 30px;
 	padding: 0px;
 	text-align: center;
-	line-height: 70px;
 	font-size: 40px;
-	border: none;
-	border: 10px solid black;
 	transition-duration: .25s;
 }
-.draw_button{
+.draw_button,.submit_button,.download_button{
 	display: block;
 	width: 100%;
 	float:left;
+	height: 90px;
+	line-height: 70px;
+	border: 10px solid black;
 }
-.submit_button, .download_button{
+.submit_button, .download_button, .minus_button,.plus_button,.radius_display{
 	display: none;
 	width: 47.5%;
 	margin-top: 30px;
@@ -147,7 +147,7 @@ canvas{
 	clear: none;
 }
 .submit_button{
-	float: left;
+	float:left;
 }
 .download_button{
 	float:right;
@@ -155,8 +155,27 @@ canvas{
 .draw_button:hover, .submit_button:hover, .download_button:hover{
 	background: #a6d4f3;
 }
+.minus_button,.plus_button,.radius_display{
+	width:50px;
+	height:50px;
+	float: left;
+	margin-top: 0;
+	clear: none;
+	text-align: center;
+	font-size: 40px;
+	line-height: 20px;
+	font-family: 'Rancho', 'Amatic SC', cursive;
+}
+.minus_button,.plus_button{
+	border:5px solid black;
+}
+.radius_display{
+	width: 75px;
+	line-height: 50px;
+}
 .color_select{
 	display: none;
+	clear: both;
 }
 .color_select li{
 	float:left;

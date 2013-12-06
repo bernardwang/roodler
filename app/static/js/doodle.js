@@ -101,9 +101,11 @@ function drawButton(){
   $('.draw_button').css("display","none");
   $('.submit_button').css("display","block");
   $('.download_button').css("display","block");
+  $('.plus_button').css("display","block");
+  $('.minus_button').css("display","block");
+  $('.radius_display').css("display","block");
   $('.color_select').css("display","block");
 }
-
 function submitButton() {
   //gets dataurl and cuts out part of string
   var dataURL = canvas.toDataURL('image/png');
@@ -114,14 +116,23 @@ function submitButton() {
   $.post('/submitImg', params, function (data) {
     alert("Doodle Submited!");
   });
-
 }
-
 function downloadButton(){
   Canvas2Image.saveAsPNG(canvas);
 }
 
-//*************************************************************************************
+function plusButton(){
+  if(radius+1<1000){
+    radius++;
+    $('.radius_display').text(radius.toString());
+  }
+} 
+function minusButton(){
+  if(radius-1>0){
+    radius--;
+    $('.radius_display').text(radius.toString());
+  }
+}
 
 function black(){
   color="black";
@@ -165,5 +176,5 @@ function magenta(){
 }
 
 function updateCursor(){
-  $('.cursor').css("background-color",color);
+  $('.cursor').css("color",color);
 }
