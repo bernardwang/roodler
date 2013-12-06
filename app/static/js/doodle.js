@@ -48,6 +48,10 @@ function init() {
     getCoords(e);
     $('.cursor').css("display","none");
   }, false);
+
+  //updates draw settings to default
+  update("black");
+  pencilButton();
 }
 
 function getCoords(e){
@@ -130,7 +134,7 @@ function pencilButton(){
   radius=10;
   $('.pencil_button').css("border","5px solid black");
   $('.eraser_button').css("border","none");
-  updateCursor();
+  update();
 }
 function eraserButton(){
   erase=true;
@@ -138,64 +142,36 @@ function eraserButton(){
   radius=60;
   $('.pencil_button').css("border","none");
   $('.eraser_button').css("border","5px solid black");
-  updateCursor(); 
+  update(); 
 }
 function plusButton(){
   if(radius+1<1000){
     radius+=2;
-    updateCursor();
+    update();
   }
 } 
 function minusButton(){
   if(radius-1>0){
     radius-=2;
-    updateCursor();
+    update();
   }
 }
 
-function black(){
-  if(!erase) color="black";
-  updateCursor();
-}
-function blue(){
-  if(!erase) color="blue";
-  updateCursor();
-}
-function purple(){
-  if(!erase) color="purple";
-  updateCursor();
-}
-function magenta(){
-  if(!erase) color="magenta";
-  updateCursor();
-}
-function red(){
-  if(!erase) color="red";
-  updateCursor();
-}
-function brown(){
-  if(!erase) color="#964B00";
-  updateCursor();
-}
-function orange(){
-  if(!erase) color="orange";
-  updateCursor();
-}
-function yellow(){
-  if(!erase) color="yellow";
-  updateCursor();
-}
-function green(){
-  if(!erase) color="green";
-  updateCursor();
-}
-function cyan(){
-  if(!erase) color="cyan";
-  updateCursor();
-}
+function update(c){
+  //updates color palette
+  if(!erase) {
+    //brown diff hex
+    if(c=="brown") color="#964B00";
+    else color=c;
 
-function updateCursor(){
-  $('.cursor').css("color",color);
+    //sets select
+    $('.color_select li button').css("outline","none");
+    $('.'+c).css("outline","#a6d4f3 solid thick");
+  }
+  //brown diff hex
+  if(color=="brown") $('.cursor').css("color","#964B00");
+  else $('.cursor').css("color",color);
+
   if(color=="white"){
     $('.cursor').css("border",(radius/2)+"px solid #eee");
   }
@@ -209,4 +185,5 @@ function updateCursor(){
   else{
     $('.radius_display').text(radius.toString());
   }
+
 }
