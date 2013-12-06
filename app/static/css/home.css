@@ -145,7 +145,7 @@ canvas{
 	float:left;
 	height: 90px;
 	line-height: 70px;
-	border: 10px solid black;
+	border: 8px solid black;
 }
 .submit_button, .download_button, .minus_button,.plus_button,.radius_display{
 	display: none;
@@ -187,7 +187,7 @@ canvas{
 }
 .color_select li{
 	float:left;
-	margin-right: 66.5px;
+	margin-right: 57px;
 }
 .color_select li button{
 	width: 30px;
@@ -201,11 +201,12 @@ canvas{
 .black{background-color: black;}
 .white{background-color: white;}
 .red{background-color: red;}
+.brown{background-color: #964B00;}
 .orange{background-color: orange;}
 .yellow{background-color: yellow;}
 .green{background-color: green;}
-.blue{background-color: blue;}
 .cyan{background-color: #00FFFF;}
+.blue{background-color: blue;}
 .purple{background-color: #800080;}
 .magenta{background-color: #FF00FF;}
 

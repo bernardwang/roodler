@@ -151,6 +151,10 @@ function red(){
   color="red";
   updateCursor();
 }
+function brown(){
+  color="brown";
+  updateCursor();
+}
 function orange(){
   color="orange";
   updateCursor();
@@ -163,12 +167,12 @@ function green(){
   color="green";
   updateCursor();
 }
-function blue(){
-  color="blue";
-  updateCursor();
-}
 function cyan(){
   color="cyan";
+  updateCursor();
+}
+function blue(){
+  color="blue";
   updateCursor();
 }
 function purple(){
