@@ -177,6 +177,7 @@ canvas{
 	background: url('../img/pencil.png');
 	background-size:100%;
 	margin-right: 10px;
+	border: 5px solid black;
 }
 .eraser_button{
 	background: url('../img/eraser.png');
@@ -221,9 +222,6 @@ canvas{
 	height: 30px;
 	display: block;
 	border: 1px solid #ccc;
-}
-.color_select span li{
-	margin-right: 0px;
 }
 .black{background-color: black;}
 .blue{background-color: blue;}
