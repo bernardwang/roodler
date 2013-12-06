@@ -240,10 +240,13 @@ canvas{
 .about_section{
 	margin-left: auto;
 	margin-right:auto;
-	margin-bottom: 60px;
 	display: block;
 	max-width: 900px;
+	height: 880px; 
 	font-family: 'Rancho', 'Amatic SC', cursive;
+
+	background: url('../img/background.png');
+	background-size: 100%; 
 }
 .about_header{
 	font-size: 103px;
