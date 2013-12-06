@@ -152,7 +152,6 @@ canvas{
 	display: none;
 	width: 47.5%;
 	margin-top: 30px;
-	margin-bottom: 30px;
 	margin-right: auto;
 	margin-left: auto;
 	clear: none;
@@ -166,16 +165,13 @@ canvas{
 .draw_button:hover, .submit_button:hover, .download_button:hover{
 	background: #a6d4f3;
 }
-.pencil_button,.eraser_button{
+.pencil_button,.eraser_button,.undo_button{
 	background-repeat:no-repeat;
-	background-attachment:fixed;
-	background-position:center; 
 	border: none;
 	display: none;
 	width:50px;
 	height:50px;
-	float: left;
-	margin-bottom: 20px;
+	float: left
 }
 .pencil_button{
 	background: url('../img/pencil.png');
@@ -187,6 +183,11 @@ canvas{
 	background-size: 100%;
 	margin-right: 40px;
 }
+.undo_button{
+	background: url('../img/undo.png');
+	background-size: 100%;
+	margin-left: 40px;
+}
 .minus_button,.plus_button,.radius_display{
 	width:50px;
 	height:50px;
@@ -197,7 +198,6 @@ canvas{
 	font-size: 40px;
 	line-height: 20px;
 	font-family: 'Rancho', 'Amatic SC', cursive;
-	margin-bottom: 20px;
 }
 .minus_button,.plus_button{
 	border:5px solid black;
@@ -208,11 +208,13 @@ canvas{
 }
 .color_select{
 	display: none;
-	clear: both;
+	clear: none;
 }
 .color_select li{
-	float:left;
-	margin-right: 66.6px;
+	float:right;
+	margin-top:10px;
+	margin-left: 1.5%;
+	height: 50px;
 }
 .color_select li button{
 	width: 30px;

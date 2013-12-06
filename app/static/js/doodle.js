@@ -105,12 +105,8 @@ function drawButton(){
   $('.canvas_wrapper').css("margin-top","30px");
   //switches buttons
   $('.draw_button').css("display","none");
-  $('.submit_button').css("display","block");
+  $('.top_buttons button').css("display","block");
   $('.download_button').css("display","block");
-  $('.pencil_button').css("display","block");
-  $('.eraser_button').css("display","block");
-  $('.plus_button').css("display","block");
-  $('.minus_button').css("display","block");
   $('.radius_display').css("display","block");
   $('.color_select').css("display","block");
 }
