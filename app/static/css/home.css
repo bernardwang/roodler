@@ -129,29 +129,32 @@ canvas{
 .top_buttons>button{
 	font-family: 'Rancho', 'Amatic SC', cursive;
 	/*background: #F7F7F7;*/
-	background: white;
-	margin-right: auto;
-	margin-left: auto;
 	margin-top: 0px;
-	margin-bottom: 30px;
 	padding: 0px;
 	text-align: center;
 	font-size: 40px;
 	transition-duration: .25s;
 }
 .draw_button,.submit_button,.download_button{
+	background: white;
 	display: block;
 	width: 100%;
 	float:left;
 	height: 90px;
 	line-height: 70px;
 	border: 8px solid black;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 30px;
 }
 .submit_button, .download_button, .minus_button,.plus_button,.radius_display{
+	background: white;
 	display: none;
 	width: 47.5%;
 	margin-top: 30px;
 	margin-bottom: 30px;
+	margin-right: auto;
+	margin-left: auto;
 	clear: none;
 }
 .submit_button{
@@ -163,6 +166,25 @@ canvas{
 .draw_button:hover, .submit_button:hover, .download_button:hover{
 	background: #a6d4f3;
 }
+.pencil_button,.eraser_button{
+	background-repeat:no-repeat;
+	border: none;
+	display: none;
+	width:50px;
+	height:50px;
+	float: left;
+	margin-bottom: 20px;
+}
+.pencil_button{
+	background: url('../img/pencil.png');
+	background-size: 100%;
+	margin-right: 5px;
+}
+.eraser_button{
+	background: url('../img/eraser.png');
+	background-size: 100%;
+	margin-right: 30px;
+}
 .minus_button,.plus_button,.radius_display{
 	width:50px;
 	height:50px;
@@ -173,6 +195,7 @@ canvas{
 	font-size: 40px;
 	line-height: 20px;
 	font-family: 'Rancho', 'Amatic SC', cursive;
+	margin-bottom: 20px;
 }
 .minus_button,.plus_button{
 	border:5px solid black;
@@ -187,7 +210,7 @@ canvas{
 }
 .color_select li{
 	float:left;
-	margin-right: 57px;
+	margin-right: 66.6px;
 }
 .color_select li button{
 	width: 30px;
@@ -199,16 +222,15 @@ canvas{
 	margin-right: 0px;
 }
 .black{background-color: black;}
-.white{background-color: white;}
+.blue{background-color: blue;}
+.purple{background-color: #800080;}
+.magenta{background-color: #FF00FF;}
 .red{background-color: red;}
 .brown{background-color: #964B00;}
 .orange{background-color: orange;}
 .yellow{background-color: yellow;}
 .green{background-color: green;}
 .cyan{background-color: #00FFFF;}
-.blue{background-color: blue;}
-.purple{background-color: #800080;}
-.magenta{background-color: #FF00FF;}
 
 /***************************************************************************/
 .about_section{

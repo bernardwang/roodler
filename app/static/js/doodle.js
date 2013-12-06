@@ -106,6 +106,8 @@ function drawButton(){
   $('.draw_button').css("display","none");
   $('.submit_button').css("display","block");
   $('.download_button').css("display","block");
+  $('.pencil_button').css("display","block");
+  $('.eraser_button').css("display","block");
   $('.plus_button').css("display","block");
   $('.minus_button').css("display","block");
   $('.radius_display').css("display","block");
@@ -125,7 +127,20 @@ function submitButton() {
 function downloadButton(){
   Canvas2Image.saveAsPNG(canvas);
 }
-
+function pencilButton(){
+  color="black";
+  radius="10";
+  $('.pencil_button').css("border","5px solid black");
+  $('.eraser_button').css("border","none");
+  updateCursor();
+}
+function eraserButton(){
+  color="white";
+  radius="60";
+  $('.pencil_button').css("border","none");
+  $('.eraser_button').css("border","5px solid black");
+  updateCursor(); 
+}
 function plusButton(){
   if(radius+1<1000){
     radius+=2;
@@ -143,8 +158,16 @@ function black(){
   color="black";
   updateCursor();
 }
-function white(){
-  color="white";
+function blue(){
+  color="blue";
+  updateCursor();
+}
+function purple(){
+  color="purple";
+  updateCursor();
+}
+function magenta(){
+  color="magenta";
   updateCursor();
 }
 function red(){
@@ -152,7 +175,7 @@ function red(){
   updateCursor();
 }
 function brown(){
-  color="brown";
+  color="#964B00";
   updateCursor();
 }
 function orange(){
@@ -171,22 +194,15 @@ function cyan(){
   color="cyan";
   updateCursor();
 }
-function blue(){
-  color="blue";
-  updateCursor();
-}
-function purple(){
-  color="purple";
-  updateCursor();
-}
-function magenta(){
-  color="magenta";
-  updateCursor();
-}
 
 function updateCursor(){
   $('.cursor').css("color",color);
-  $('.cursor').css("border",(radius/2)+"px solid");
+  if(color=="white"){
+    $('.cursor').css("border",(radius/2)+"px solid #eee");
+  }
+  else{
+    $('.cursor').css("border",(radius/2)+"px solid");
+  }
   $('.cursor').css("margin-top",-radius+"px");
   if(radius==0){
     $('.radius_display').text("1");
