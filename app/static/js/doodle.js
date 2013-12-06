@@ -104,11 +104,11 @@ function drawButton(){
   $('#canvas').css("display","block");
   $('.canvas_wrapper').css("margin-top","30px");
   //switches buttons
-  $('.draw_button').css("display","none");
   $('.top_buttons button').css("display","block");
   $('.download_button').css("display","block");
   $('.radius_display').css("display","block");
   $('.color_select').css("display","block");
+  $('.draw_button').css("display","none");
 }
 function submitButton() {
   //gets dataurl and cuts out part of string
