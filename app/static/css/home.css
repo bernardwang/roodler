@@ -9,13 +9,9 @@ body{
 }
 .navbar{
 	font-family: 'Rancho', 'Amatic SC', cursive;
-	/*background: #A3FFA3;*/
-	background-color: #F7F7F7;*/
 	text-align: center;
 	height: 150px;
 	margin-bottom: 50px;
-	/*border-top: 10px solid black;
-	border-bottom: 10px solid black;*/
 	border-bottom: 1px solid #ccc;
 	background-color: #F7F7F7;
 	position: relative;
@@ -101,8 +97,20 @@ canvas{
 	background-color: white;
 	display:none;
 }
+.warning{
+	width: 880px;
+	height: 880px;
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	border: none;
+	background-color: black;
+	color: white;
+	font-size: 50px;
+	font-family: 'Rancho', 'Amatic SC', cursive;
+}
 .canvasImg{
- 	display: block;
+ 	display: none;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -120,7 +128,7 @@ canvas{
 }
 .top_buttons>button{
 	font-family: 'Rancho', 'Amatic SC', cursive;
-	/*background: #A3FFA3;*/
+	/*background: #F7F7F7;*/
 	background: white;
 	margin-right: auto;
 	margin-left: auto;

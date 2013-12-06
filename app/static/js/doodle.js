@@ -92,10 +92,15 @@ function draw() {
 }
 
 //*************************************************************************************
-
+function warning(){
+  //removes warning shows doodle
+  $('.warning').css("display","none");
+  $('.canvasImg').css("display","block");
+}
 function drawButton(){
   //switches display to canvas
   $('.canvasImg').css("display","none");
+  $('.warning').css("display","none");
   $('#canvas').css("display","block");
   //switches buttons
   $('.draw_button').css("display","none");
