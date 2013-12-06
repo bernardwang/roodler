@@ -134,7 +134,7 @@ function pencilButton(){
   radius=10;
   $('.pencil_button').css("border","5px solid black");
   $('.eraser_button').css("border","none");
-  update();
+  update(color);
 }
 function eraserButton(){
   erase=true;
@@ -142,48 +142,46 @@ function eraserButton(){
   radius=60;
   $('.pencil_button').css("border","none");
   $('.eraser_button').css("border","5px solid black");
-  update(); 
+  update("white"); 
 }
 function plusButton(){
   if(radius+1<1000){
     radius+=2;
-    update();
+
+    if(color=="#964B00") update("brown");
+    else update(color);
   }
 } 
 function minusButton(){
   if(radius-1>0){
     radius-=2;
-    update();
+    if(color=="#964B00") update("brown");
+    else update(color);
   }
 }
 
 function update(c){
   //updates color palette
+  $('.color_select li button').css("outline","none");
   if(!erase) {
     //brown diff hex
     if(c=="brown") color="#964B00";
     else color=c;
 
     //sets select
-    $('.color_select li button').css("outline","none");
     $('.'+c).css("outline","#a6d4f3 solid thick");
   }
+
   //brown diff hex
   if(color=="brown") $('.cursor').css("color","#964B00");
   else $('.cursor').css("color",color);
 
-  if(color=="white"){
-    $('.cursor').css("border",(radius/2)+"px solid #eee");
-  }
-  else{
-    $('.cursor').css("border",(radius/2)+"px solid");
-  }
+  if(color=="white") $('.cursor').css("border",(radius/2)+"px solid #eee");
+  else $('.cursor').css("border",(radius/2)+"px solid");
+  
   $('.cursor').css("margin-top",-radius+"px");
-  if(radius==0){
-    $('.radius_display').text("1");
-  }
-  else{
-    $('.radius_display').text(radius.toString());
-  }
+
+  if(radius==0) $('.radius_display').text("1");
+  else $('.radius_display').text(radius.toString());
 
 }
