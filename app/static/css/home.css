@@ -72,7 +72,7 @@ hr{
 	border: 10px dotted black;
 	margin-right: auto;
 	margin-left: auto;
-	margin-top: 30px;
+	margin-top: 0px;
 	margin-bottom: 60px;
 	float: left;
 }
@@ -168,6 +168,8 @@ canvas{
 }
 .pencil_button,.eraser_button{
 	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-position:center; 
 	border: none;
 	display: none;
 	width:50px;
@@ -177,13 +179,13 @@ canvas{
 }
 .pencil_button{
 	background: url('../img/pencil.png');
-	background-size: 100%;
-	margin-right: 5px;
+	background-size:100%;
+	margin-right: 10px;
 }
 .eraser_button{
 	background: url('../img/eraser.png');
 	background-size: 100%;
-	margin-right: 30px;
+	margin-right: 40px;
 }
 .minus_button,.plus_button,.radius_display{
 	width:50px;

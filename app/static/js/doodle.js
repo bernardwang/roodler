@@ -2,7 +2,7 @@
 //*************************************************************************************
 
 //drawing variables
-var canvas, context, paint = false, cursor = false,
+var canvas, context, paint = false, cursor = false, erase = false,
     prevX = 0,
     currX = 0,
     prevY = 0,
@@ -102,6 +102,7 @@ function drawButton(){
   $('.canvasImg').css("display","none");
   $('.warning').css("display","none");
   $('#canvas').css("display","block");
+  $('.canvas_wrapper').css("margin-top","30px");
   //switches buttons
   $('.draw_button').css("display","none");
   $('.submit_button').css("display","block");
@@ -128,15 +129,17 @@ function downloadButton(){
   Canvas2Image.saveAsPNG(canvas);
 }
 function pencilButton(){
+  erase=false;
   color="black";
-  radius="10";
+  radius=10;
   $('.pencil_button').css("border","5px solid black");
   $('.eraser_button').css("border","none");
   updateCursor();
 }
 function eraserButton(){
+  erase=true;
   color="white";
-  radius="60";
+  radius=60;
   $('.pencil_button').css("border","none");
   $('.eraser_button').css("border","5px solid black");
   updateCursor(); 
@@ -155,43 +158,43 @@ function minusButton(){
 }
 
 function black(){
-  color="black";
+  if(!erase) color="black";
   updateCursor();
 }
 function blue(){
-  color="blue";
+  if(!erase) color="blue";
   updateCursor();
 }
 function purple(){
-  color="purple";
+  if(!erase) color="purple";
   updateCursor();
 }
 function magenta(){
-  color="magenta";
+  if(!erase) color="magenta";
   updateCursor();
 }
 function red(){
-  color="red";
+  if(!erase) color="red";
   updateCursor();
 }
 function brown(){
-  color="#964B00";
+  if(!erase) color="#964B00";
   updateCursor();
 }
 function orange(){
-  color="orange";
+  if(!erase) color="orange";
   updateCursor();
 }
 function yellow(){
-  color="yellow";
+  if(!erase) color="yellow";
   updateCursor();
 }
 function green(){
-  color="green";
+  if(!erase) color="green";
   updateCursor();
 }
 function cyan(){
-  color="cyan";
+  if(!erase) color="cyan";
   updateCursor();
 }
 
