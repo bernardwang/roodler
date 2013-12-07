@@ -50,7 +50,7 @@ function init() {
   }, false);
 
   //default draw settings
-  update(color);
+  updateDrawing(color);
   pencilButton();
 }
 
@@ -72,6 +72,7 @@ function moveCursor(){
 
 function draw() {
   if(paint){
+    radiusUpdate();
     //drawing settings
     context.fillStyle = color;
     context.strokeStyle = color; //sets color
@@ -134,7 +135,7 @@ function pencilButton(){
   radius=10;
   $('.pencil_button').css("outline","black solid thick");
   $('.eraser_button').css("outline","white solid thick");
-  update(color);
+  updateDrawing(color);
 }
 function eraserButton(){
   erase=true;
@@ -142,14 +143,14 @@ function eraserButton(){
   radius=60;
   $('.pencil_button').css("outline","white solid thick");
   $('.eraser_button').css("outline","black solid thick");
-  update("white"); 
+  updateDrawing("white"); 
 }
 function plusButton(){
   if(radius+2<1000){
     radius+=2;
 
-    if(color=="#964B00") update("brown");
-    else update(color);
+    if(color=="#964B00") updateDrawing("brown");
+    else updateDrawing(color);
   }
 } 
 function minusButton(){
@@ -157,8 +158,8 @@ function minusButton(){
     if(radius-2==0) radius=1;
     else radius-=2;
 
-    if(color=="#964B00") update("brown");
-    else update(color);
+    if(color=="#964B00") updateDrawing("brown");
+    else updateDrawing(color);
   }
 }
 function radiusSelect(){
@@ -179,7 +180,7 @@ function radiusUpdate(){
     if(input>=1&&input<=999){
       radius=input;
       document.getElementById("radius_display").value=radius;
-      update(color);
+      updateDrawing(color);
     }
   }
   else {
@@ -192,7 +193,7 @@ function undoButton(){
 
 }
 
-function update(c){
+function updateDrawing(c){
   //updates color palette
   $('.color_select li button').css("outline","none");
   if(!erase) {
