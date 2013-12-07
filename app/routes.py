@@ -6,7 +6,7 @@ app = Flask(__name__)
  
 @app.route('/')
 def home():
-  return render_template('doodle.html')
+  return render_template('home.html')
 
 @app.route('/about')
 def about():
@@ -15,9 +15,9 @@ def about():
 @app.route('/submitImg', methods=['POST'])
 def submitImg():
   dataURL = request.form['img']
-  f = open("static/img/doodle.png", "w")
-  f.write(dataURL.decode('base64'))
-  f.close()
+  with open("static/img/doodle.png", "w") as file:
+    file.write(dataURL.decode('base64'))
+  file.close()
   return "stuff"
 
 if __name__ == '__main__':
