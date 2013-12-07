@@ -159,9 +159,22 @@ function minusButton(){
     else update(color);
   }
 }
+function radiusSelect(){
+  $('.radius_display').css("border","5px solid #a6d4f3");
+  $('.radius_display').css("width","65px");
+  $('.radius_display').css("height","40px");
+}
+function radiusDeselect(){
+  $('.radius_display').css("border","none");
+  $('.radius_display').css("width","75px");
+  $('.radius_display').css("height","50px");
+}
+function radiusSubmit(){
+  
+}
 
 function undoButton(){
-  
+
 }
 
 function update(c){
