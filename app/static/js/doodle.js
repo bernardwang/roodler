@@ -49,8 +49,8 @@ function init() {
     $('.cursor').css("display","none");
   }, false);
 
-  //updates draw settings to default
-  update("black");
+  //default draw settings
+  update(color);
   pencilButton();
 }
 
@@ -132,20 +132,20 @@ function pencilButton(){
   erase=false;
   color="black";
   radius=10;
-  $('.pencil_button').css("border","5px solid black");
-  $('.eraser_button').css("border","none");
+  $('.pencil_button').css("outline","black solid thick");
+  $('.eraser_button').css("outline","white solid thick");
   update(color);
 }
 function eraserButton(){
   erase=true;
   color="white";
   radius=60;
-  $('.pencil_button').css("border","none");
-  $('.eraser_button').css("border","5px solid black");
+  $('.pencil_button').css("outline","white solid thick");
+  $('.eraser_button').css("outline","black solid thick");
   update("white"); 
 }
 function plusButton(){
-  if(radius+1<1000){
+  if(radius+2<1000){
     radius+=2;
 
     if(color=="#964B00") update("brown");
@@ -153,11 +153,15 @@ function plusButton(){
   }
 } 
 function minusButton(){
-  if(radius-1>0){
+  if(radius-2>0){
     radius-=2;
     if(color=="#964B00") update("brown");
     else update(color);
   }
+}
+
+function undoButton(){
+  
 }
 
 function update(c){
@@ -180,8 +184,5 @@ function update(c){
   else $('.cursor').css("border",(radius/2)+"px solid");
   
   $('.cursor').css("margin-top",-radius+"px");
-
-  if(radius==0) $('.radius_display').text("1");
-  else $('.radius_display').text(radius.toString());
-
+  $('.radius_display').text(radius.toString());
 }

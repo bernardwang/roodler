@@ -128,12 +128,9 @@ canvas{
 }
 .top_buttons>button{
 	font-family: 'Rancho', 'Amatic SC', cursive;
-	/*background: #F7F7F7;*/
-	margin-top: 0px;
 	padding: 0px;
 	text-align: center;
 	font-size: 40px;
-	outline: none;
 	transition-duration: .25s;
 }
 .draw_button,.submit_button,.download_button{
@@ -147,6 +144,7 @@ canvas{
 	margin-right: auto;
 	margin-left: auto;
 	margin-bottom: 30px;
+	outline: none;
 }
 .submit_button, .download_button, .minus_button,.plus_button,.radius_display{
 	background: white;
@@ -156,6 +154,7 @@ canvas{
 	margin-right: auto;
 	margin-left: auto;
 	clear: none;
+	outline: none;
 }
 .submit_button{
 	float:left;
@@ -163,16 +162,18 @@ canvas{
 .download_button{
 	float:right;
 }
-.draw_button:hover, .submit_button:hover, .download_button:hover{
+.draw_button:hover, .submit_button:hover, .download_button:hover,.minus_button:hover,.plus_button:hover{
 	background: #a6d4f3;
 }
 .pencil_button,.eraser_button,.undo_button{
 	background-repeat:no-repeat;
 	border: none;
 	display: none;
-	width:50px;
-	height:50px;
-	float: left
+	width:40px;
+	height:40px;
+	float: left;
+	margin-top: 5px;
+	outline: white solid thick;
 }
 .pencil_button{
 	background: url('../img/pencil.png');
@@ -190,8 +191,6 @@ canvas{
 	margin-left: 40px;
 }
 .minus_button,.plus_button,.radius_display{
-	width:50px;
-	height:50px;
 	float: left;
 	margin-top: 0;
 	clear: none;
@@ -202,11 +201,22 @@ canvas{
 }
 .minus_button,.plus_button{
 	border:5px solid black;
+	width:50px;
+	height:50px;
 }
 .radius_display{
 	width: 75px;
-	line-height: 50px;
+	height: 50px;
+	border:none;
+	padding: 0;
+	outline:none;
 }
+.radius_display:hover,.radius_display:active{
+	border: 5px solid #a6d4f3;
+	width: 65px;
+	height: 40px;
+}
+
 .color_select{
 	display: none;
 	clear: none;
