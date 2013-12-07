@@ -98,6 +98,7 @@ function draw() {
 }
 
 function saveVersion(){
+  if(versions.length>=25) versions.shift();
   versions.push(canvas.toDataURL('image/png'));
 }
 
