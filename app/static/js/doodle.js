@@ -12,6 +12,8 @@ var canvas, context, paint = false, cursor = false, erase = false,
 var color = "black",
     radius = 10;
 
+var versions = new Array();
+
 //inital call
 function init() {
   //initialize canvas variables
@@ -36,7 +38,7 @@ function init() {
   }, false);
   canvas.addEventListener("mouseup", function (e) {
     paint = false;
-    getCoords(e)
+    saveVersion();
   }, false);
   canvas.addEventListener("mousemove", function (e) {
     getCoords(e);
@@ -52,6 +54,7 @@ function init() {
   //default draw settings
   updateDrawing(color);
   pencilButton();
+  saveVersion();
 }
 
 function getCoords(e){
@@ -68,7 +71,6 @@ function moveCursor(){
   var y = currY+(radius/2);
   $('.cursor').css({left:x, top:y});
 }
-
 
 function draw() {
   if(paint){
@@ -93,7 +95,10 @@ function draw() {
       context.closePath();
     }
   }
+}
 
+function saveVersion(){
+  versions.push(canvas.toDataURL('image/png'));
 }
 
 //*************************************************************************************
@@ -143,7 +148,7 @@ function eraserButton(){
   radius=60;
   $('.pencil_button').css("outline","white solid thick");
   $('.eraser_button').css("outline","black solid thick");
-  updateDrawing("white"); 
+  updateDrawing(color); 
 }
 function plusButton(){
   if(radius+2<1000){
@@ -180,7 +185,9 @@ function radiusUpdate(){
     if(input>=1&&input<=999){
       radius=input;
       document.getElementById("radius_display").value=radius;
-      updateDrawing(color);
+      
+      if(color=="#964B00") updateDrawing("brown");
+      else updateDrawing(color);
     }
   }
   else {
@@ -188,25 +195,28 @@ function radiusUpdate(){
     document.getElementById("radius_display").value=radius;
   }
 }
-
 function undoButton(){
+  versions.pop();
 
+  var img = new Image;
+  img.src = versions[versions.length-1];
+
+  context.drawImage(img,0,0);
 }
-
 function updateDrawing(c){
   //updates color palette
-  $('.color_select li button').css("outline","none");
+  $('.color_select li button').css("outline","white solid thick");
+
   if(!erase) {
     //brown diff hex
     if(c=="brown") color="#964B00";
     else color=c;
-
     //sets select
     $('.'+c).css("outline","#a6d4f3 solid thick");
   }
 
   //brown diff hex
-  if(color=="brown") $('.cursor').css("color","#964B00");
+  if(c=="brown") $('.cursor').css("color","#964B00");
   else $('.cursor').css("color",color);
 
   if(color=="white") $('.cursor').css("border",(radius/2)+"px solid #eee");

@@ -230,9 +230,6 @@ canvas{
 	border: 1px solid #ccc;
 	transition-duration: .25s;
 }
-.color_select li button:hover{
-	outline: #a6d4f3 solid thick;
-}
 .black{background-color: black;}
 .blue{background-color: blue;}
 .purple{background-color: #800080;}
