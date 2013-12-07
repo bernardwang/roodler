@@ -167,7 +167,7 @@ canvas{
 .draw_button:hover, .submit_button:hover, .download_button:hover,.minus_button:hover,.plus_button:hover{
 	background: #a6d4f3;
 }
-.pencil_button,.eraser_button,.undo_button{
+.pencil_button,.eraser_button,.undo_button,.redo_button{
 	background-repeat:no-repeat;
 	border: none;
 	display: none;
@@ -181,16 +181,22 @@ canvas{
 	background: url('../img/pencil.png');
 	background-size:100%;
 	margin-right: 10px;
+	margin-left: 5px;
 }
 .eraser_button{
 	background: url('../img/eraser.png');
 	background-size: 100%;
-	margin-right: 40px;
+	margin-right: 35px;
 }
 .undo_button{
 	background: url('../img/undo.png');
 	background-size: 100%;
-	margin-left: 40px;
+	margin-left: 35px;
+	margin-right: 10px;
+}
+.redo_button{
+	background: url('../img/redo.png');
+	background-size: 100%;
 }
 .minus_button,.plus_button,#radius_display{
 	float: left;
@@ -267,7 +273,7 @@ canvas{
 	vertical-align: sub;	
 }
 .about_credit{
-	margin-top: 100px;
+	margin-top: 310px;
 	font-size: 20px;
 	margin-bottom: 0;
 }

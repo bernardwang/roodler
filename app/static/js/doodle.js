@@ -203,6 +203,20 @@ function undoButton(){
   img.src = versions[versions.length-1];
 
   context.drawImage(img,0,0);
+
+  //button click animation
+  $('.undo_button').css("outline","black solid thick");
+  setTimeout( function(){$('.undo_button').css("outline","white solid thick")}, 200);
+}
+function redoButton(){
+  var img = new Image;
+  img.src = versions[versions.length-1];
+
+  context.drawImage(img,0,0);
+
+  //button click animation
+  $('.redo_button').css("outline","black solid thick");
+  setTimeout( function(){$('.redo_button').css("outline","white solid thick")}, 200);
 }
 function updateDrawing(c){
   //updates color palette
