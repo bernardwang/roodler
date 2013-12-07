@@ -110,7 +110,7 @@ function drawButton(){
   //switches buttons
   $('.top_buttons button').css("display","block");
   $('.download_button').css("display","block");
-  $('.radius_display').css("display","block");
+  $('#radius_display').css("display","block");
   $('.color_select').css("display","block");
   $('.draw_button').css("display","none");
 }
@@ -153,24 +153,39 @@ function plusButton(){
   }
 } 
 function minusButton(){
-  if(radius-2>0){
-    radius-=2;
+  if(radius-2>=0){
+    if(radius-2==0) radius=1;
+    else radius-=2;
+
     if(color=="#964B00") update("brown");
     else update(color);
   }
 }
 function radiusSelect(){
-  $('.radius_display').css("border","5px solid #a6d4f3");
-  $('.radius_display').css("width","65px");
-  $('.radius_display').css("height","40px");
+  $('#radius_display').css("border","5px solid #a6d4f3");
+  $('#radius_display').css("width","65px");
+  $('#radius_display').css("height","40px");
 }
 function radiusDeselect(){
-  $('.radius_display').css("border","none");
-  $('.radius_display').css("width","75px");
-  $('.radius_display').css("height","50px");
+  $('#radius_display').css("border","none");
+  $('#radius_display').css("width","75px");
+  $('#radius_display').css("height","50px");
 }
-function radiusSubmit(){
-  
+function radiusUpdate(){
+  var input = document.getElementById("radius_display").value;
+  input = input.replace(/ /g,'');
+  if(!isNaN(input)&&input.length>0) {
+    input = Math.round(input);
+    if(input>=1&&input<=999){
+      radius=input;
+      document.getElementById("radius_display").value=radius;
+      update(color);
+    }
+  }
+  else {
+    alert("Not a valid number. Please enter a number from 1 to 999.");
+    document.getElementById("radius_display").value=radius;
+  }
 }
 
 function undoButton(){
@@ -197,5 +212,5 @@ function update(c){
   else $('.cursor').css("border",(radius/2)+"px solid");
   
   $('.cursor').css("margin-top",-radius+"px");
-  $('.radius_display').text(radius.toString());
+  $('#radius_display').val(radius.toString());
 }

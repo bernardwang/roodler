@@ -48,7 +48,7 @@
         <button class="eraser_button" type="button" onclick="eraserButton()"> </button>
 
         <button class="minus_button" type="button" onclick="minusButton()"> - </button>
-        <input class="radius_display" type="text" onfocus="radiusSelect()" onblur="radiusDeselect()" onsubmit="radiusSubmit()" name="radius">
+        <input id="radius_display" type="text" onfocus="radiusSelect()" onblur="radiusDeselect()" onchange="radiusUpdate()" onsubmit="radiusUpdate()" name="radius">
         <button class="plus_button" type="button" onclick="plusButton()"> + </button>
 
         <button class="undo_button" type="button" onclick="undoButton()"> </button>
