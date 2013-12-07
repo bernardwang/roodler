@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request
 import base64
 import re
- 
-app = Flask(__name__)      
- 
+
+app = Flask(__name__)
+
 @app.route('/')
 def home():
   return render_template('home.html')
@@ -15,7 +15,11 @@ def about():
 @app.route('/submitImg', methods=['POST'])
 def submitImg():
   dataURL = request.form['img']
-  with open("static/img/doodle.png", "w") as file:
+  with open("/home/roodler/Dropbox/roodler/doodle.png", "w") as file:
+    file.write(dataURL.decode('base64'))
+  file.close()
+
+  with open("/home/roodler/Dropbox/roodler/doodle1.png", "w") as file:
     file.write(dataURL.decode('base64'))
   file.close()
   return "stuff"
