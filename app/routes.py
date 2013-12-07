@@ -19,7 +19,7 @@ def submitImg():
     file.write(dataURL.decode('base64'))
   file.close()
 
-  with open("/home/roodler/Dropbox/roodler/doodle1.png", "w") as file:
+  with open("/home/roodler/Dropbox/roodler/doodle2.png", "w") as file:
     file.write(dataURL.decode('base64'))
   file.close()
   return "stuff"
