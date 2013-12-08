@@ -131,7 +131,6 @@ canvas{
 	padding: 0px;
 	text-align: center;
 	font-size: 40px;
-	transition-duration: .25s;
 }
 .draw_button,.submit_button,.download_button{
 	background: white;
@@ -145,6 +144,7 @@ canvas{
 	margin-left: auto;
 	margin-bottom: 30px;
 	outline: none;
+	transition-duration: .25s;
 }
 .submit_button, .download_button, .minus_button,.plus_button,#radius_display{
 	background: white;
@@ -193,10 +193,12 @@ canvas{
 	background-size: 100%;
 	margin-left: 35px;
 	margin-right: 10px;
+	transition-duration: .125s;
 }
 .redo_button{
 	background: url('../img/redo.png');
 	background-size: 100%;
+	transition-duration: .125s;
 }
 .minus_button,.plus_button,#radius_display{
 	float: left;
@@ -211,6 +213,7 @@ canvas{
 	border:5px solid black;
 	width:50px;
 	height:50px;
+	transition-duration: .25s;
 }
 #radius_display{
 	width: 75px;

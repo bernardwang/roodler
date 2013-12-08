@@ -13,6 +13,7 @@ var color = "black",
     radius = 10;
 
 var versions = new Array();
+var vIndex=-1;
 
 //inital call
 function init() {
@@ -98,8 +99,9 @@ function draw() {
 }
 
 function saveVersion(){
-  if(versions.length>=25) versions.shift();
+  if(versions.length>=20) versions.shift();
   versions.push(canvas.toDataURL('image/png'));
+  vIndex=versions.length-1;
 }
 
 //*************************************************************************************
@@ -197,26 +199,26 @@ function radiusUpdate(){
   }
 }
 function undoButton(){
-  versions.pop();
-
+  if(vIndex>0) vIndex--;
   var img = new Image;
-  img.src = versions[versions.length-1];
+  img.src = versions[vIndex];
 
   context.drawImage(img,0,0);
 
   //button click animation
   $('.undo_button').css("outline","black solid thick");
-  setTimeout( function(){$('.undo_button').css("outline","white solid thick")}, 200);
+  setTimeout( function(){$('.undo_button').css("outline","white solid thick")}, 125);
 }
 function redoButton(){
+  if(vIndex<versions.length-1) vIndex++;
   var img = new Image;
-  img.src = versions[versions.length-1];
+  img.src = versions[vIndex];
 
   context.drawImage(img,0,0);
 
   //button click animation
   $('.redo_button').css("outline","black solid thick");
-  setTimeout( function(){$('.redo_button').css("outline","white solid thick")}, 200);
+  setTimeout( function(){$('.redo_button').css("outline","white solid thick")}, 125);
 }
 function updateDrawing(c){
   //updates color palette
