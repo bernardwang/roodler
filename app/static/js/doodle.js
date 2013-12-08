@@ -99,9 +99,20 @@ function draw() {
 }
 
 function saveVersion(){
-  if(versions.length>=20) versions.shift();
-  versions.push(canvas.toDataURL('image/png'));
-  vIndex=versions.length-1;
+  if(versions.length-1>=5) {
+    if(vIndex>=versions.length/2)
+    {
+      versions.shift();
+      vIndex--;
+    }
+    if(vIndex<versions.length/2)
+    {
+      versions.pop();
+    }
+  }
+  vIndex++;
+  if(versions.length==vIndex) versions.push(canvas.toDataURL('image/png'));
+  else versions.splice(vIndex,0,canvas.toDataURL('image/png'));
 }
 
 //*************************************************************************************
