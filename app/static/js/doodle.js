@@ -99,7 +99,7 @@ function draw() {
 }
 
 function saveVersion(){
-  if(versions.length-1>=5) {
+  if(versions.length-1>=20) {
     if(vIndex>=versions.length/2)
     {
       versions.shift();
