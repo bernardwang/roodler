@@ -7,7 +7,7 @@ body{
 	background: white;
 	margin: 0;
 }
-.navbar{
+.navbar,.about_navbar{
 	font-family: 'Rancho', 'Amatic SC', cursive;
 	text-align: center;
 	height: 150px;
@@ -251,22 +251,33 @@ canvas{
 .cyan{background-color: #00FFFF;}
 
 /***************************************************************************/
+.about_navbar{
+	margin-bottom: 0;
+}
+.about_container{
+	height: 880px;
+	margin: 0;
+	margin-top: -70px;
+	background: url('../img/background.png');
+	background-size: auto 100%;
+	background-position:center bottom; 
+	background-repeat:no-repeat; 
+}
 .about_section{
+	margin-top: 0px;
 	margin-left: auto;
 	margin-right:auto;
 	display: block;
 	max-width: 900px;
 	height: 880px; 
-	font-family: 'Rancho', 'Amatic SC', cursive;
 
-	background: url('../img/background.png');
-	background-size: 100%; 
+	font-family: 'Rancho', 'Amatic SC', cursive;
 }
 .about_header{
 	font-size: 103px;
 }
 .about_text{
-	font-size: 35px;
+	font-size: 40px;
 	/*font-family: 'Raleway', sans-serif;*/
 	/*font-family: 'Gudea', sans-serif;*/
 	font-weight: 500;
@@ -276,7 +287,7 @@ canvas{
 	vertical-align: sub;	
 }
 .about_credit{
-	margin-top: 310px;
+	margin-top: 270px;
 	font-size: 20px;
 	margin-bottom: 0;
 }
