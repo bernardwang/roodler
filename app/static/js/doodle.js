@@ -34,6 +34,7 @@ function init() {
 
   //mouse listeners
   canvas.addEventListener("mousedown", function (e) {
+    radiusUpdate();
     paint = true;
     getCoords(e);
   }, false);
@@ -53,6 +54,7 @@ function init() {
   }, false);
 
   //default draw settings
+  warning();
   updateDrawing(color);
   pencilButton();
   saveVersion();
@@ -75,7 +77,6 @@ function moveCursor(){
 
 function draw() {
   if(paint){
-    radiusUpdate();
     //drawing settings
     context.fillStyle = color;
     context.strokeStyle = color; //sets color
@@ -162,7 +163,7 @@ function eraserButton(){
   radius=60;
   $('.pencil_button').css("outline","white solid thick");
   $('.eraser_button').css("outline","black solid thick");
-  updateDrawing(color); 
+  updateDrawing("erase"); 
 }
 function plusButton(){
   if(radius+2<1000){
@@ -235,6 +236,7 @@ function updateDrawing(c){
   //updates color palette
   $('.color_select li button').css("outline","white solid thick");
 
+  //if normal drawing
   if(!erase) {
     //brown diff hex
     if(c=="brown") color="#964B00";
@@ -243,12 +245,22 @@ function updateDrawing(c){
     $('.'+c).css("outline","#a6d4f3 solid thick");
   }
 
-  //brown diff hex
-  if(c=="brown") $('.cursor').css("color","#964B00");
-  else $('.cursor').css("color",color);
+  //if was erasing but clicked on color select
+  if(erase&&color=="white"&&c!="white"&&c!=="erase"){
+    var oldRadius = radius; //saves radius
+    pencilButton(); //turns to default drawing
+    //edits default
+    radius = oldRadius;
+    color=c;
+    updateDrawing(color);
+  }
 
   if(color=="white") $('.cursor').css("border",(radius/2)+"px solid #eee");
   else $('.cursor').css("border",(radius/2)+"px solid");
+
+  //brown diff hex
+  if(c=="brown") $('.cursor').css("color","#964B00");
+  else $('.cursor').css("color",color);
   
   $('.cursor').css("margin-top",-radius+"px");
   $('#radius_display').val(radius.toString());
