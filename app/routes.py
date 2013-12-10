@@ -22,7 +22,7 @@ def submitImg():
   file.close()
 
   time = strftime("%Y-%m-%d %H:%M:%S", gmtime())
-  with open("/home/roodler/Dropbox/roodler/"+time+".png", "w") as file:
+  with open("/home/roodler/Dropbox/roodler/olddoodles"+time+".png", "w") as file:
     file.write(dataURL.decode('base64'))
   file.close()
   return "stuff"
