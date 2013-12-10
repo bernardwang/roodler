@@ -203,6 +203,10 @@ function radiusUpdate(){
       if(color=="#964B00") updateDrawing("brown");
       else updateDrawing(color);
     }
+    else {
+    alert("Not a valid number. Please enter a number from 1 to 999.");
+    document.getElementById("radius_display").value=radius;
+    }
   }
   else {
     alert("Not a valid number. Please enter a number from 1 to 999.");
