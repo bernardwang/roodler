@@ -34,7 +34,6 @@ function init() {
 
   //mouse listeners
   canvas.addEventListener("mousedown", function (e) {
-    radiusUpdate();
     paint = true;
     getCoords(e);
   }, false);
@@ -55,7 +54,6 @@ function init() {
 
   //default draw settings
   warning();
-  updateDrawing(color);
   pencilButton();
   saveVersion();
 }
@@ -191,6 +189,7 @@ function radiusDeselect(){
   $('#radius_display').css("border","none");
   $('#radius_display').css("width","75px");
   $('#radius_display').css("height","50px");
+  radiusUpdate();
 }
 function radiusUpdate(){
   var input = document.getElementById("radius_display").value;
